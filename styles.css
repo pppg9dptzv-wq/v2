@@ -280,6 +280,8 @@ body {
   }
 
   .cards-row .card {
+    width: min(82vw, 300px);
+    max-width: 300px;
     flex: 0 0 auto;
   }
 
@@ -300,5 +302,9 @@ body {
   .card-tall,
   .card-wide {
     min-height: 170px;
+  }
+
+  .card-tall {
+    min-height: clamp(230px, 66vw, 320px);
   }
 }
