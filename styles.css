@@ -135,7 +135,7 @@ body {
 .cards-grid .card {
   width: 100%;
   min-width: auto; /* Elimina el min-width fijo */
-  max-width: 500px; /* Elimina el max-width fijo */
+  max-width: 280px; /* Elimina el max-width fijo */
   min-height: clamp(180px, 24vw, 260px);
 }
 
