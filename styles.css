@@ -123,35 +123,36 @@ body {
   color: var(--text);
 }
 
+.cards-grid {
+  --cards-gap: clamp(10px, 1.6vw, 10px);
+  margin-top: clamp(6px, 1vw, 12px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Siempre 2 columnas */
+  gap: var(--cards-gap);
+  justify-content: center;
+}
+
+.cards-grid .card {
+  width: 100%;
+  min-width: auto; /* Elimina el min-width fijo */
+  max-width: 500px; /* Elimina el max-width fijo */
+  min-height: clamp(180px, 24vw, 260px);
+}
+
+/* Para el sponsor y otras secciones que quieras que ocupen todo el ancho */
 .cards-row {
   --cards-gap: clamp(10px, 1.6vw, 18px);
   margin-top: clamp(6px, 1vw, 12px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
   gap: var(--cards-gap);
 }
 
 .cards-row .card {
-  flex: 1 1 220px;
-  max-width: 280px;
-}
-
-.cards-grid {
-  --cards-gap: clamp(10px, 1.6vw, 18px);
-  margin-top: clamp(6px, 1vw, 12px);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: var(--cards-gap);
-}
-
-.cards-grid .card {
-  flex: 1 1 calc(50% - (var(--cards-gap) / 2));
-  min-width: 240px;
-  max-width: 420px;
+  flex: 1 1 100%; /* Ocupa todo el ancho */
+  max-width: 450px;
+  min-height: clamp(200px, 28vw, 300px);
 }
 
 .card {
@@ -258,31 +259,16 @@ body {
     gap: 12px;
   }
 
-  .cards-row {
-    margin-top: 4px;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
   .cards-grid {
-    margin-top: 4px;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    gap: 10px; /* Gap más pequeño en móvil */
   }
 
-  .cards-row .card,
   .cards-grid .card {
-    width: min(100%, 420px);
-    max-width: 420px;
-    margin-inline: auto;
+    min-height: clamp(160px, 40vw, 200px); /* Más pequeño en móvil */
   }
 
   .cards-row .card {
-    width: min(82vw, 300px);
-    max-width: 300px;
-    flex: 0 0 auto;
+    min-height: clamp(180px, 45vw, 240px);
   }
 
   .title-box {
@@ -297,14 +283,5 @@ body {
 
   .card {
     padding: 14px 14px 16px;
-  }
-
-  .card-tall,
-  .card-wide {
-    min-height: 170px;
-  }
-
-  .card-tall {
-    min-height: clamp(230px, 66vw, 320px);
   }
 }
