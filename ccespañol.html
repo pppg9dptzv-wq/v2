@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CALISTHENICS RANKED</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="corner-cta" href="addme/indexespañol.html" aria-label="Ir a añadirme">
+    QUIERO APARECER
+  </a>
+
+  <a class="corner-cta corner-cta--right" href="regulations/indexespañol.html" aria-label="Ver reglamento">
+    ¿CÓMO?
+  </a>
+
+  <main class="page">
+    <section class="container" aria-label="Ranking de calistenia">
+      <header class="header">
+        <h1 class="title">CALISTHENICS RANKED</h1>
+        <p class="subtitle"></p>
+      </header>
+
+      <section class="stats" aria-label="Estadísticas">
+        <article class="stat-card stat-card--neutral" aria-label="Total de atletas">
+          <div class="stat-top">
+            <span class="stat-icon" aria-hidden="true">👥</span>
+            <span class="stat-label">ATLETAS TOTALES</span>
+          </div>
+          <div class="stat-value" id="statTotal">0</div>
+        </article>
+
+        <article class="stat-card stat-card--up" aria-label="Subidas de posición">
+          <div class="stat-top">
+            <span class="stat-icon stat-icon--up" aria-hidden="true">▲</span>
+            <span class="stat-label">POSICIONES SUBIDAS</span>
+          </div>
+          <div class="stat-value stat-value--up" id="statUps">0</div>
+        </article>
+
+        <article class="stat-card stat-card--tie" aria-label="Número de empates">
+          <div class="stat-top">
+            <span class="stat-icon stat-icon--tie" aria-hidden="true">ℹ</span>
+            <span class="stat-label">EMPATES</span>
+          </div>
+          <div class="stat-value stat-value--tie" id="statTies">0</div>
+        </article>
+      </section>
+
+      <section class="legend" aria-label="Leyenda">
+        <div class="legend-item"><span class="legend-badge legend-badge--up">▲</span> Subió</div>
+        <div class="legend-item"><span class="legend-badge legend-badge--tie">⚠</span> Empató</div>
+      </section>
+
+      <section class="search" aria-label="Buscar">
+        <input
+          id="searchInput"
+          class="search-input"
+          type="text"
+          inputmode="search"
+          autocomplete="off"
+          placeholder="Buscar atleta por nombre o posición..."
+          aria-label="Buscar atleta por nombre o posición"
+        />
+      </section>
+
+      <section class="list" aria-label="Lista de atletas">
+        <div id="athletesList" class="athletes"></div>
+      </section>
+
+      <footer class="footer">
+        Haz clic en un atleta para ver su perfil completo
+      </footer>
+    </section>
+  </main>
+
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Perfil del atleta">
+      <header class="modal-header">
+        <div id="modalTitle" class="modal-title">#1 - Atleta</div>
+        <button id="modalClose" class="modal-close" type="button" aria-label="Cerrar">⏎</button>
+      </header>
+
+      <div class="modal-body">
+        <div class="modal-hero">
+          <img id="modalPhoto" class="modal-photo" alt="Foto del atleta" />
+          <div class="modal-points">
+            <div class="modal-points-label">PUNTOS</div>
+            <div id="modalPoints" class="modal-points-value">0</div>
+            <div class="modal-duration">
+              <span class="modal-duration-label">DURACIÓN DEL VIDEO</span>
+              <span id="modalDuration" class="modal-duration-value">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <a id="modalVideo" class="btn btn--video" href="#" target="_blank" rel="noopener noreferrer">
+            VER VIDEO
+          </a>
+        </div>
+
+        <div class="modal-actions modal-actions--secondary">
+          <a id="modalAthleteInfo" class="btn btn--athlete-info" href="#" target="_blank" rel="noopener noreferrer">
+            INFORMACIÓN DEL ATLETA
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="lang-switch" aria-label="Cambiar idioma">
+    <a class="lang-switch__link" href="cc.html" lang="en">🇬🇧 EN</a>
+    <a class="lang-switch__link lang-switch__link--active" href="ccespañol.html" lang="es" aria-current="page">🇪🇸 ES</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
